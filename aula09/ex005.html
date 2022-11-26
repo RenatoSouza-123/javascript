@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(68, 125, 199);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg" name="msg" class="msg">Clique em mim</div>
+    <script>
+        //window.document.write(window.document.charset)
+        //window.document.write(window.document.URL)
+
+        /*Selecionando elementos na árvore DOM:
+        -- por Marca    
+            -- document.getElementsByTagName()
+        -- por ID
+            -- document.getElementById()
+        -- por Nome
+            -- document.getElementsByName()
+        -- por Classe
+            -- document.getElementsByClassName()
+        -- por Seletor
+            -- querySelector()
+            -- querySelectorAll()
+        */
+
+        //Selecionando por Marca
+        var corpo = window.document.body
+        corpo.style.background = 'gray'
+
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write(p1.innerText)
+        p1.style.color = 'blue'
+
+        var p2 = window.document.getElementsByTagName('p')[1]
+        window.document.write(p2.innerHTML)
+        p2.style.color = 'green'
+
+        //Selecionando por ID
+        var b = window.document.getElementById('msg')
+        b.style.background = 'green'
+        b.innerText = 'Estou aguardando'
+        //window.document.getElementById('msg').innerText = 'Olá!'
+
+        //Selecionando por Name
+        var c = window.document.getElementsByName('msg')[0]
+        c.innerText = 'Olá'
+
+        //Selecionando por Class
+        var d = window.document.getElementsByClassName('msg')[0]
+        d.innerText = 'Oi'
+
+        //Selecionando por Seletor
+        var e = window.document.querySelector('div#msg')
+        e.innerText = 'Estou aprendendo a selecionar por seletor'
+    </script>
+
+    <!--DOM: Document Object Model / Modelo de Objeto para Documentos-->
+</body>
+</html>
